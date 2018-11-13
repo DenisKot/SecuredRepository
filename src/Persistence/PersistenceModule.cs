@@ -11,8 +11,8 @@ namespace Persistence
     {
         public static void Configure(Container container)
         {
-            container.Register<AppDbContext>();
-            container.Register<IUnitOfWork, UnitOfWork.UnitOfWork>();
+            container.Register<AppDbContext>(new WebRequestLifestyle());
+            container.Register<IUnitOfWork, UnitOfWork.UnitOfWork>(new WebRequestLifestyle());
 
             container.Register<IRepository<Employee>, Repository<Employee>>();
 

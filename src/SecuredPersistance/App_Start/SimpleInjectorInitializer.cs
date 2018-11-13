@@ -25,19 +25,21 @@ namespace SecuredPersistence.App_Start
             InitializeContainer(container);
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
-            
-            //container.Verify();
-            
+
+            container.Verify();
+
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
             
-            GlobalConfiguration.Configuration.Filters.Add(new UnitOfWorkApiFilterAttribute(container.GetInstance<IUnitOfWork>()));
+            //GlobalConfiguration.Configuration.Filters.Add(new UnitOfWorkApiFilterAttribute(container.GetInstance<IUnitOfWork>()));
             //GlobalConfiguration.Configuration.Filters.Add(new UnitOfWorkMvcActionFilter(container.GetInstance<IUnitOfWork>()));
-            GlobalFilters.Filters.Add(new UnitOfWorkMvcFilterAttribute(container.GetInstance<IUnitOfWork>()));
+            GlobalFilters.Filters.Add(container.GetInstance<UnitOfWorkMvcFilterAttribute>());
         }
      
         private static void InitializeContainer(Container container)
         {
             ApplicationModule.Configure(container);
+
+            container.Register<UnitOfWorkMvcFilterAttribute>(Lifestyle.Transient);
         }
     }
 }

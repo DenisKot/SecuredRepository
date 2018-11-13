@@ -2,17 +2,19 @@
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Core;
+using SimpleInjector;
 
 namespace SecuredPersistence.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
     public class UnitOfWorkMvcFilterAttribute : ActionFilterAttribute, IExceptionFilter
     {
-        private readonly IUnitOfWork unitOfWork;
+        private IUnitOfWork unitOfWork => this.container.GetInstance<IUnitOfWork>();
+        private readonly Container container;
 
-        public UnitOfWorkMvcFilterAttribute(IUnitOfWork unitOfWork)
+        public UnitOfWorkMvcFilterAttribute(Container container)
         {
-            this.unitOfWork = unitOfWork;
+            this.container = container;
         }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)

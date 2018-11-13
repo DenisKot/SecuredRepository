@@ -46,7 +46,6 @@ namespace Persistence.UnitOfWork
         {
             if (!this.disposed)
             {
-                var changed = context.ChangeTracker.Entries().Where(x => x.State == EntityState.Modified|| x.State == EntityState.Added).Select(x => x.Entity).ToList();
                 this.context.SaveChanges();
             }
         }
