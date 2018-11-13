@@ -185,6 +185,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\ExceptionFilterAttribute.cs" />
     <Compile Include="Filters\UnitOfWorkApiFilterAttribute.cs" />
     <Compile Include="Filters\UnitOfWorkMvcActionFilter.cs" />
     <Compile Include="Filters\UnitOfWorkMvcFilterAttribute.cs" />

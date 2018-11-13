@@ -24,7 +24,7 @@ namespace Application.ValidatorSupport
                 var sb = new StringBuilder();
                 foreach (var failure in result.Errors)
                 {
-                    Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                    sb.AppendLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
                 }
 
                 throw new AppValidationException(sb.ToString());

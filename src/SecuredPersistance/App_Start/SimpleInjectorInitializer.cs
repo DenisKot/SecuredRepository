@@ -17,7 +17,7 @@ namespace SecuredPersistence.App_Start
     
     public static class SimpleInjectorInitializer
     {
-        public static void Initialize()
+        public static Container Initialize()
         {
             var container = new Container();
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
@@ -29,10 +29,8 @@ namespace SecuredPersistence.App_Start
             container.Verify();
 
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
-            
-            //GlobalConfiguration.Configuration.Filters.Add(new UnitOfWorkApiFilterAttribute(container.GetInstance<IUnitOfWork>()));
-            //GlobalConfiguration.Configuration.Filters.Add(new UnitOfWorkMvcActionFilter(container.GetInstance<IUnitOfWork>()));
-            GlobalFilters.Filters.Add(container.GetInstance<UnitOfWorkMvcFilterAttribute>());
+
+            return container;
         }
      
         private static void InitializeContainer(Container container)

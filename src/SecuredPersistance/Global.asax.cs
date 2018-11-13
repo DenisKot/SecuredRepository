@@ -16,13 +16,18 @@ namespace SecuredPersistence
     {
         protected void Application_Start()
         {
-            SimpleInjectorInitializer.Initialize();
+            var container = SimpleInjectorInitializer.Initialize();
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //GlobalConfiguration.Configuration.Filters.Add(new UnitOfWorkApiFilterAttribute(container.GetInstance<IUnitOfWork>()));
+            //GlobalConfiguration.Configuration.Filters.Add(new UnitOfWorkMvcActionFilter(container.GetInstance<IUnitOfWork>()));
+            GlobalFilters.Filters.Add(container.GetInstance<UnitOfWorkMvcFilterAttribute>());
+            GlobalFilters.Filters.Add(new ExceptionFilterAttribute());
         }
     }
 }
