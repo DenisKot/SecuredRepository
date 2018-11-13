@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.Data.Common;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using Core.Domain;
 using Crosscutting;
 
@@ -7,6 +9,10 @@ namespace Persistence
     public class AppDbContext : DbContext
     {
         public AppDbContext() : base("Default")
+        {
+        }
+
+        public AppDbContext(DbConnection connection) : base(connection, true)
         {
         }
 

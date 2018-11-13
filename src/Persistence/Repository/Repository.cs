@@ -7,7 +7,7 @@ using Core;
 
 namespace Persistence.Repository
 {
-    internal class Repository<TEntity> : IRepository<TEntity>
+    public class Repository<TEntity> : IRepository<TEntity>
         where TEntity : BaseEntity
     {
         protected AppDbContext context;
