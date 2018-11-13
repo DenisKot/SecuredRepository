@@ -1,20 +1,15 @@
-using Application.Manager;
-using Core;
-using Core.Domain;
-
 [assembly: WebActivator.PostApplicationStartMethod(typeof(SecuredPersistence.App_Start.SimpleInjectorInitializer), "Initialize")]
 
 namespace SecuredPersistence.App_Start
 {
     using System.Reflection;
-    using System.Web.Http;
     using System.Web.Mvc;
     using Application;
     using SecuredPersistence.Filters;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
-    
+
     public static class SimpleInjectorInitializer
     {
         public static Container Initialize()
@@ -29,6 +24,10 @@ namespace SecuredPersistence.App_Start
             container.Verify();
 
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+
+            // Wtf? it's not working if move to app_start
+            GlobalFilters.Filters.Add(container.GetInstance<UnitOfWorkMvcFilterAttribute>());
+            GlobalFilters.Filters.Add(new ExceptionFilterAttribute());
 
             return container;
         }

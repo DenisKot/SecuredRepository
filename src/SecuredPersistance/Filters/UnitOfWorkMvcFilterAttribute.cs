@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Application.Exception;
 using Core;
 using SimpleInjector;
 
