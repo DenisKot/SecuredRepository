@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201811131025284_InitialCreate.Designer.cs">
       <DependentUpon>201811131025284_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811141506219_SimplePermissionsMigration.cs" />
+    <Compile Include="Migrations\201811141506219_SimplePermissionsMigration.Designer.cs">
+      <DependentUpon>201811141506219_SimplePermissionsMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersistenceModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +92,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201811131025284_InitialCreate.resx">
       <DependentUpon>201811131025284_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811141506219_SimplePermissionsMigration.resx">
+      <DependentUpon>201811141506219_SimplePermissionsMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -67,6 +67,7 @@
     <Compile Include="Exception\AppValidationException.cs" />
     <Compile Include="Manager\IManager.cs" />
     <Compile Include="Manager\Manager.cs" />
+    <Compile Include="Manager\Validators\UserValidator.cs" />
     <Compile Include="ValidatorSupport\IValidatorSupport.cs" />
     <Compile Include="ValidatorSupport\ValidatorSupport.cs" />
     <Compile Include="Manager\Validators\EmployeeValidator.cs" />

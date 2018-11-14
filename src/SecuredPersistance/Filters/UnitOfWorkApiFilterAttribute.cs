@@ -34,15 +34,17 @@ namespace SecuredPersistence.Filters
 
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
         {
-            this.unitOfWork.Complete();
+            this.unitOfWork.SaveChanges();
             this.unitOfWork.EndTransaction();
+            this.unitOfWork.Dispose();
             base.OnActionExecuted(actionExecutedContext);
         }
 
         public override Task OnActionExecutedAsync(HttpActionExecutedContext actionExecutedContext, CancellationToken cancellationToken)
         {
-            this.unitOfWork.CompleteAsync();
+            this.unitOfWork.SaveChangesAsync();
             this.unitOfWork.EndTransaction();
+            this.unitOfWork.Dispose();
             return base.OnActionExecutedAsync(actionExecutedContext, cancellationToken);
         }
 

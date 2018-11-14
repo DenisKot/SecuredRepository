@@ -16,10 +16,13 @@ namespace Application
             PersistenceModule.Configure(container);
 
             container.Register<IValidator<Employee>, EmployeeValidator>();
+            container.Register<IValidator<User>, UserValidator>();
 
             container.Register<IManager<Employee>, Manager<Employee>>();
+            container.Register<IManager<User>, Manager<User>>();
 
             container.Register<IValidatorSupport<Employee>, ValidatorSupport<Employee>>();
+            container.Register<IValidatorSupport<User>, ValidatorSupport<User>>();
 
             //Assembly[] validationSupportAssemblies = new[] { typeof(ValidatorSupport<>).Assembly };
             //container.Register(typeof(IValidatorSupport<>), validationSupportAssemblies);

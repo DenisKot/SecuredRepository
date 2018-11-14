@@ -42,7 +42,7 @@ namespace Persistence.UnitOfWork
             }
         }
 
-        public void Complete()
+        public void SaveChanges()
         {
             if (!this.disposed)
             {
@@ -50,7 +50,7 @@ namespace Persistence.UnitOfWork
             }
         }
 
-        public async Task CompleteAsync()
+        public async Task SaveChangesAsync()
         {
             if (!this.disposed)
             {

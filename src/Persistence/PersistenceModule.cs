@@ -15,6 +15,8 @@ namespace Persistence
             container.Register<IUnitOfWork, UnitOfWork.UnitOfWork>(new WebRequestLifestyle());
 
             container.Register<IRepository<Employee>, Repository<Employee>>();
+            container.Register<IRepository<Permission>, Repository<Permission>>();
+            container.Register<IRepository<User>, Repository<User>>();
 
             //Assembly[] assemblies = new[] { typeof(Repository<>).Assembly };
 

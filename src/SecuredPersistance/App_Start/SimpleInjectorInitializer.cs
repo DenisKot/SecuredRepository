@@ -1,3 +1,5 @@
+using SecuredPersistence.Services;
+
 [assembly: WebActivator.PostApplicationStartMethod(typeof(SecuredPersistence.App_Start.SimpleInjectorInitializer), "Initialize")]
 
 namespace SecuredPersistence.App_Start
@@ -5,6 +7,7 @@ namespace SecuredPersistence.App_Start
     using System.Reflection;
     using System.Web.Mvc;
     using Application;
+    using Core;
     using SecuredPersistence.Filters;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
@@ -37,6 +40,7 @@ namespace SecuredPersistence.App_Start
             ApplicationModule.Configure(container);
 
             container.Register<UnitOfWorkMvcFilterAttribute>(Lifestyle.Transient);
+            container.Register<IUserSession, UserSession>(Lifestyle.Transient);
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using Core.Domain;
+using Crosscutting.Security;
 
 namespace SecuredPersistence.Controllers
 {
@@ -6,6 +9,7 @@ namespace SecuredPersistence.Controllers
     {
         public ActionResult Index()
         {
+            this.ViewBag.Permissions = this.GetPermissions();
             return this.View();
         }
 
@@ -19,6 +23,18 @@ namespace SecuredPersistence.Controllers
         public ActionResult List()
         {
             return this.View();
+        }
+
+        private IList<SelectListItem> GetPermissions()
+        {
+            var nameOfEntity = nameof(Employee);
+            return new List<SelectListItem>
+            {
+                new SelectListItem {Text = $"{nameOfEntity} {EntityOperationType.Create}", Value = $"{nameOfEntity}.{EntityOperationType.Create}"},
+                new SelectListItem {Text = $"{nameOfEntity} {EntityOperationType.Read}", Value = $"{nameOfEntity}.{EntityOperationType.Read}"},
+                new SelectListItem {Text = $"{nameOfEntity} {EntityOperationType.Delete}", Value = $"{nameOfEntity}.{EntityOperationType.Delete}"},
+                new SelectListItem {Text = $"{nameOfEntity} {EntityOperationType.Update}", Value = $"{nameOfEntity}.{EntityOperationType.Update}"},
+            };
         }
     }
 }

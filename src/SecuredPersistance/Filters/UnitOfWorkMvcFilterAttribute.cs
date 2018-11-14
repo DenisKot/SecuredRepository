@@ -26,7 +26,7 @@ namespace SecuredPersistence.Filters
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            this.unitOfWork.Complete();
+            this.unitOfWork.SaveChanges();
             this.unitOfWork.EndTransaction();
             base.OnActionExecuted(filterContext);
         }

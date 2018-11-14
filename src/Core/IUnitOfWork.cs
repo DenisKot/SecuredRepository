@@ -8,7 +8,7 @@ namespace Core
         void BeginTransaction();
         void EndTransaction();
         void Rollback();
-        void Complete();
-        Task CompleteAsync();
+        void SaveChanges();
+        Task SaveChangesAsync();
     }
 }

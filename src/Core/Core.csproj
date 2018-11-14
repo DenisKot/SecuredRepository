@@ -44,8 +44,11 @@
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Domain\Employee.cs" />
+    <Compile Include="Domain\Permission.cs" />
+    <Compile Include="Domain\User.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="IUserSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

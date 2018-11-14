@@ -9,10 +9,15 @@ namespace Application.Manager
     public interface IManager<TEntity>
         where TEntity: BaseEntity
     {
-        void Insert(TEntity instance);
+        TEntity Insert(TEntity instance, bool ignorePermissions = false);
         IEnumerable<TEntity> GetAll();
         TEntity GetById(object id);
         void Delete(object id);
         void Update(TEntity entityToUpdate);
+
+        IEnumerable<TEntity> Get(
+            Expression<Func<TEntity, bool>> filter = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+            string includeProperties = "");
     }
 }
