@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using Core;
 using Core.Domain;
 using Crosscutting.Security;
 
@@ -7,9 +8,18 @@ namespace SecuredPersistence.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IUserSession userSession;
+
+        public HomeController(IUserSession userSession)
+        {
+            this.userSession = userSession;
+        }
+
         public ActionResult Index()
         {
             this.ViewBag.Permissions = this.GetPermissions();
+            this.ViewBag.IsAuthorized = this.userSession.Id.HasValue;
+
             return this.View();
         }
 

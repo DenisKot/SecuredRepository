@@ -8,13 +8,13 @@ using FluentValidation;
 
 namespace Application.ValidatorSupport
 {
-    internal class ValidatorSupport<TEntity> : IValidatorSupport<TEntity>
+    internal class EntityOperationEntityOperationValidator<TEntity> : IEntityOperationValidator<TEntity>
         where TEntity: BaseEntity
     {
         private readonly IValidator<TEntity> validator;
         private readonly IUserSession userSession;
 
-        public ValidatorSupport(IValidator<TEntity> validator, IUserSession userSession)
+        public EntityOperationEntityOperationValidator(IValidator<TEntity> validator, IUserSession userSession)
         {
             this.validator = validator;
             this.userSession = userSession;

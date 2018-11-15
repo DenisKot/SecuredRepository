@@ -20,11 +20,11 @@ namespace SecuredPersistence.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(CustomPrincipalModel principialsModel)
+        public ActionResult Register(CustomPrincipalModel principalsModel)
         {
             var permissions = new List<Permission>();
 
-            foreach (var permission in principialsModel.Permissions)
+            foreach (var permission in principalsModel.Permissions)
             {
                 permissions.Add(new Permission
                 {
@@ -34,15 +34,16 @@ namespace SecuredPersistence.Controllers
 
             var user = new User
             {
-                Name = principialsModel.Name,
+                Name = principalsModel.Name,
                 Permissions = permissions
             };
 
-            this.userManager.Insert(user, true);
-            principialsModel.Id = user.Id;
+            this.userManager.IgnorePermissions = true;
+            this.userManager.Insert(user);
+            principalsModel.Id = user.Id;
 
             var serializer = new JavaScriptSerializer();
-            var userData = serializer.Serialize(principialsModel);
+            var userData = serializer.Serialize(principalsModel);
 
             FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
                 1,
@@ -56,7 +57,16 @@ namespace SecuredPersistence.Controllers
             HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
             this.Response.Cookies.Add(faCookie);
 
-            return this.RedirectToAction("Index", "Home");
+            CustomPrincipal newUser = new CustomPrincipal(authTicket.Name)
+            {
+                Id = principalsModel.Id,
+                Name = principalsModel.Name,
+                Permissions = principalsModel.Permissions
+            };
+
+            System.Web.HttpContext.Current.User = newUser;
+
+            return this.RedirectToAction("Index", "Employees");
         }
     }
 }

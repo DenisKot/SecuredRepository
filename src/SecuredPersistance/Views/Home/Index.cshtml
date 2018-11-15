@@ -11,6 +11,11 @@
 
 <div class="row">
     <div class="col-md-12">
+        
+        @if (ViewBag.IsAuthorized)
+        {
+            <h1>You are authorized! You can go to Employees tab! Also you can register under different user with different permissions!</h1>
+        }
 
         @using (Html.BeginRouteForm("Default", new { action = "Register", controller = "Account" }))
         {

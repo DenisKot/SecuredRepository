@@ -21,11 +21,11 @@ namespace Application
             container.Register<IManager<Employee>, Manager<Employee>>();
             container.Register<IManager<User>, Manager<User>>();
 
-            container.Register<IValidatorSupport<Employee>, ValidatorSupport<Employee>>();
-            container.Register<IValidatorSupport<User>, ValidatorSupport<User>>();
+            container.Register<IEntityOperationValidator<Employee>, EntityOperationEntityOperationValidator<Employee>>();
+            container.Register<IEntityOperationValidator<User>, EntityOperationEntityOperationValidator<User>>();
 
-            //Assembly[] validationSupportAssemblies = new[] { typeof(ValidatorSupport<>).Assembly };
-            //container.Register(typeof(IValidatorSupport<>), validationSupportAssemblies);
+            //Assembly[] validationSupportAssemblies = new[] { typeof(EntityOperationEntityOperationValidator<>).Assembly };
+            //container.Register(typeof(IEntityOperationValidator<>), validationSupportAssemblies);
 
 
             //Assembly[] managerAssemblies = new[] { typeof(Manager<Employee>).Assembly };

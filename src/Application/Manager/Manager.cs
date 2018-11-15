@@ -11,20 +11,22 @@ namespace Application.Manager
     public class Manager<TEntity> : IManager<TEntity>
         where TEntity : BaseEntity
     {
-        private readonly IValidatorSupport<TEntity> validator;
+        private readonly IEntityOperationValidator<TEntity> entityOperationValidator;
         private readonly IRepository<TEntity> repository;
         private readonly IUnitOfWork unitOfWork;
 
-        public Manager(IValidatorSupport<TEntity> validator, IRepository<TEntity> repository, IUnitOfWork unitOfWork)
+        public Manager(IEntityOperationValidator<TEntity> entityOperationValidator, IRepository<TEntity> repository, IUnitOfWork unitOfWork)
         {
-            this.validator = validator;
+            this.entityOperationValidator = entityOperationValidator;
             this.repository = repository;
             this.unitOfWork = unitOfWork;
         }
 
-        public TEntity Insert(TEntity instance, bool ignorePermissions = false)
+        public bool IgnorePermissions { get; set; } = false;
+
+        public TEntity Insert(TEntity instance)
         {
-            this.validator.Validate(instance, EntityOperationType.Create, ignorePermissions);
+            this.entityOperationValidator.Validate(instance, EntityOperationType.Create, this.IgnorePermissions);
             this.repository.Insert(instance);
             this.unitOfWork.SaveChanges();
 
@@ -33,31 +35,31 @@ namespace Application.Manager
 
         public IEnumerable<TEntity> GetAll()
         {
-            this.validator.CheckPermission(EntityOperationType.Read);
+            this.entityOperationValidator.CheckPermission(EntityOperationType.Read);
             return this.repository.Get();
         }
 
         public TEntity GetById(object id)
         {
-            this.validator.CheckPermission(EntityOperationType.Read);
+            this.entityOperationValidator.CheckPermission(EntityOperationType.Read);
             return this.repository.GetById(id);
         }
 
         public void Delete(object id)
         {
-            this.validator.CheckPermission(EntityOperationType.Delete);
+            this.entityOperationValidator.CheckPermission(EntityOperationType.Delete);
             this.repository.Delete(id);
         }
 
         public void Update(TEntity entityToUpdate)
         {
-            this.validator.Validate(entityToUpdate, EntityOperationType.Update);
+            this.entityOperationValidator.Validate(entityToUpdate, EntityOperationType.Update);
             this.repository.Update(entityToUpdate);
         }
 
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "")
         {
-            this.validator.CheckPermission(EntityOperationType.Read);
+            this.entityOperationValidator.CheckPermission(EntityOperationType.Read);
             return this.repository.Get(filter, orderBy, includeProperties);
         }
     }
