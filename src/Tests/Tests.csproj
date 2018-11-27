@@ -127,6 +127,11 @@
     <Compile Include="Manager\Validators\EmployeeValidatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepositoryTest.cs" />
+    <Compile Include="SutBuilder\SutServiceTest.cs" />
+    <Compile Include="SutBuilder\SutServiceTestBuilder.cs" />
+    <Compile Include="SutBuilder\TestStructure\FirstTestDependency.cs" />
+    <Compile Include="SutBuilder\TestStructure\SecondTestDependency.cs" />
+    <Compile Include="SutBuilder\TestStructure\SutService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
