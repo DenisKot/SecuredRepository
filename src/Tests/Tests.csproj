@@ -131,6 +131,9 @@
     <Compile Include="Controllers\Employees\Impl\EditMethodEmployeeControllerTest.cs" />
     <Compile Include="EntityBuilder\EmployeeBuilder.cs" />
     <Compile Include="EntityBuilder\EmployeeBuilderTest.cs" />
+    <Compile Include="FixtureObject\FixtureObjectTest.cs" />
+    <Compile Include="FixtureObject\MockEnvy.cs" />
+    <Compile Include="FixtureObject\EmployeesControllerFixture.cs" />
     <Compile Include="Manager\Validators\EmployeeValidatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepositoryTest.cs" />
