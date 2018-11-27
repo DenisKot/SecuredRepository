@@ -1,0 +1,11 @@
+k
+iC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Application\ApplicationModule.csz
+xC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Application\Exception\AppValidationException.csj
+hC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Application\Manager\IManager.csi
+gC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Application\Manager\Manager.csz
+xC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Application\Manager\Validators\UserValidator.csÖ
+ÇC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Application\ValidatorSupport\IEntityOperationValidator.csì
+êC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Application\ValidatorSupport\EntityOperationEntityOperationValidator.cs~
+|C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Application\Manager\Validators\EmployeeValidator.csq
+oC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Application\Properties\AssemblyInfo.csX
+TC:\Users\dkote\AppData\Local\Temp\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs

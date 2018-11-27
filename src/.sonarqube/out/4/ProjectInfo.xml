@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>Presentation</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>bc9e3501-4c13-42e8-8ad7-6a226f1d889e</ProjectGuid>
+  <FullPath>C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\SecuredPersistance\Presentation.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\.sonarqube\out\4\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\SecuredPersistance\bin\SecuredPersistence.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\.sonarqube\out\4</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+</ProjectInfo>

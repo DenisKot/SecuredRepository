@@ -1,0 +1,9 @@
+m
+dC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\AppDbContext.csutf-8ä
+ÄC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Migrations\201811131025284_InitialCreate.csutf-8ó
+çC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Migrations\201811141506219_SimplePermissionsMigration.csutf-8y
+pC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Migrations\Configuration.csutf-8r
+iC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\PersistenceModule.csutf-8x
+oC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Properties\AssemblyInfo.csutf-8v
+mC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Repository\Repository.csutf-8v
+mC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\UnitOfWork\UnitOfWork.csutf-8

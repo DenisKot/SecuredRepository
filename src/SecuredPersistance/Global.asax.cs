@@ -31,19 +31,31 @@ namespace SecuredPersistence
 
             if (authCookie != null)
             {
-                FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
-
-                JavaScriptSerializer serializer = new JavaScriptSerializer();
-
-                CustomPrincipalModel serializeModel = serializer.Deserialize<CustomPrincipalModel>(authTicket.UserData);
-
-                CustomPrincipal newUser = new CustomPrincipal(authTicket.Name);
-                newUser.Id = serializeModel.Id;
-                newUser.Name = serializeModel.Name;
-                newUser.Permissions = serializeModel.Permissions;
-
-                HttpContext.Current.User = newUser;
+                try
+                {
+                    this.SetCurrentUser(authCookie);
+                }
+                catch
+                {
+                    // ignored
+                }
             }
+        }
+
+        private void SetCurrentUser(HttpCookie authCookie)
+        {
+            FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+
+            CustomPrincipalModel serializeModel = serializer.Deserialize<CustomPrincipalModel>(authTicket.UserData);
+
+            CustomPrincipal newUser = new CustomPrincipal(authTicket.Name);
+            newUser.Id = serializeModel.Id;
+            newUser.Name = serializeModel.Name;
+            newUser.Permissions = serializeModel.Permissions;
+
+            HttpContext.Current.User = newUser;
         }
     }
 }

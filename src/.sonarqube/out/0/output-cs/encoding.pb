@@ -1,0 +1,9 @@
+d
+[C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\BaseEntity.csutf-8i
+`C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\Domain\Employee.csutf-8k
+bC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\Domain\Permission.csutf-8e
+\C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\Domain\User.csutf-8e
+\C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\IRepository.csutf-8e
+\C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\IUnitOfWork.csutf-8f
+]C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\IUserSession.csutf-8q
+hC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\Properties\AssemblyInfo.csutf-8

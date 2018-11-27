@@ -1,0 +1,10 @@
+]
+[C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\BaseEntity.csb
+`C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\Domain\Employee.csd
+bC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\Domain\Permission.cs^
+\C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\Domain\User.cs^
+\C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\IRepository.cs^
+\C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\IUnitOfWork.cs_
+]C:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\IUserSession.csj
+hC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Core\Properties\AssemblyInfo.csX
+TC:\Users\dkote\AppData\Local\Temp\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs

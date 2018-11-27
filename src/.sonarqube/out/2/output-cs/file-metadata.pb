@@ -1,0 +1,12 @@
+f
+dC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\AppDbContext.csÉ
+ÄC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Migrations\201811131025284_InitialCreate.csé
+âC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Migrations\201811131025284_InitialCreate.Designer.csê
+çC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Migrations\201811141506219_SimplePermissionsMigration.csõ
+ñC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Migrations\201811141506219_SimplePermissionsMigration.Designer.csr
+pC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Migrations\Configuration.csk
+iC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\PersistenceModule.csq
+oC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Properties\AssemblyInfo.cso
+mC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\Repository\Repository.cso
+mC:\Users\dkote\Documents\Project\SecuredRepository\SecuredRepository\src\Persistence\UnitOfWork\UnitOfWork.csX
+TC:\Users\dkote\AppData\Local\Temp\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs
